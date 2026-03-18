@@ -1,0 +1,72 @@
+#include<stdio.h>
+#include<math.h>
+
+int main(){
+    int ax1,ax2,ay1,ay2,bx1,bx2,by1,by2,maxax,maxbx,maxay,maxby,minax,minbx,minay,minby,maxx,minx,maxy,miny;
+    scanf("%d%d%d%d",&ax1,&ay1,&ax2,&ay2);
+    scanf("%d%d%d%d",&bx1,&by1,&bx2,&by2);
+    if(ax1>ax2){
+        maxax=ax1;
+        minax=ax2;
+    }
+    else{
+        maxax=ax2;
+        minax=ax1;
+    }
+    if(bx1>bx2){
+        maxbx=bx1;
+        minbx=bx2;
+    }
+    else{
+        maxbx=bx2;
+        minbx=bx1;
+    }
+    if(ay1>ay2){
+        maxay=ay1;
+        minay=ay2;
+    }
+    else{
+        maxay=ay2;
+        minay=ay1;
+    }
+    if(by1>by2){
+        maxby=by1;
+        minby=by2;
+    }
+    else{
+        maxby=by2;
+        minby=by1;
+    }
+    if(maxax>maxbx){
+        maxx=maxbx;
+    }
+    else{
+        maxx=maxax;
+    }
+    if(minax>minbx){
+        minx=minax;
+    }
+    else{
+        minx=minbx;
+    }
+    int delx=maxx-minx;
+    if(maxay>maxby){
+        maxy=maxby;
+    }
+    else{
+        maxy=maxay;
+    }
+    if(minay>minby){
+        miny=minay;
+    }
+    else{
+        miny=minby;
+    }
+    int dely=maxy-miny;
+    if(dely>0 && delx>0){
+        printf("%d",delx*dely);
+    }
+    else{
+        printf("0");
+    }
+}
